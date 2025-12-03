@@ -1,0 +1,33 @@
+{
+  "name": "ns-demographics",
+  "version": "1.0.0",
+  "description": "Privacy-preserving demographic tracking for Network States",
+  "private": "true",
+  "workspaces": [
+    "mobile",
+    "backend",
+    "dashboard",
+    "contracts"
+  ],
+  "scripts": {
+    "install:all": "npm install && npm run install --workspaces",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:dashboard\"",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:dashboard": "npm run dev --workspace=dashboard",
+    "dev:mobile": "npm run start --workspace=mobile",
+    "dev:all": "concurrently \"npm run dev:backend\" \"npm run dev:dashboard\" \"npm run dev:mobile\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "semaphore",
+    "zero-knowledge",
+    "network-states",
+    "demographics",
+    "privacy"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+
